@@ -1,7 +1,8 @@
-package Web.Servlets;
+package main.java.Web.Servlets;
 
-import Dao.UserDao;
-import domain.User;
+
+import main.java.Dao.UserDao;
+import main.java.domain.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

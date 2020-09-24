@@ -1,10 +1,10 @@
-package Dao;
+package main.java.Dao;
 /*
 操作数据库中User表
  */
 
-import Utils.JDBCUtils;
-import domain.User;
+import main.java.Utils.JDBCUtils;
+import main.java.domain.User;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;

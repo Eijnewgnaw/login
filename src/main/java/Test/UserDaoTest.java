@@ -1,7 +1,7 @@
-package Test;
+package main.java.Test;
 
-import Dao.UserDao;
-import domain.User;
+import main.java.Dao.UserDao;
+import main.java.domain.User;
 import org.junit.Test;
 
 public class UserDaoTest {
