@@ -31,15 +31,15 @@ public class SucceedServlet extends HttpServlet {
                 String name = cookie.getName();
                 if ("lastTime".equals(name)){
                     flag=true;
+                    String value = cookie.getValue();
+                    value=URLDecoder.decode(value,"utf-8");
                     Date date = new Date();
                     SimpleDateFormat sdf = new SimpleDateFormat("yyyy年MM月dd日 HH:mm:ss");
                     String str_date = sdf.format(date);
-                    URLEncoder.encode(str_date,"utf-8");
+                    str_date = URLEncoder.encode(str_date,"utf-8");
                     cookie.setValue(str_date);
                     cookie.setMaxAge(60*60*24*30);
                     resp.addCookie(cookie);
-                    String value = cookie.getValue();
-                    value=URLDecoder.decode(value,"utf-8");
                     resp.getWriter().write("<h1>欢迎回来，您上次的访问时间是:  "+value+"</h1>");
                     break;
                 }
