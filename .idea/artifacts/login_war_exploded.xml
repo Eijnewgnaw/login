@@ -9,9 +9,9 @@
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="hamcrest-core-1.1" />
-          <element id="library" level="project" name="lib (3)" />
-          <element id="library" level="project" name="lib (2)" />
           <element id="library" level="project" name="lib" />
+          <element id="library" level="project" name="junit-4.12 (2)" />
+          <element id="library" level="project" name="JSONObject" />
         </element>
       </element>
     </root>

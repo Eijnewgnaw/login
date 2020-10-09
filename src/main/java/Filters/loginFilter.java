@@ -6,7 +6,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.net.http.HttpRequest;
+
 
 @WebFilter({"/SucceedServlet"})
 public class loginFilter implements Filter {
@@ -19,7 +19,7 @@ public class loginFilter implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest request=(HttpServletRequest)servletRequest;
         HttpServletResponse response=(HttpServletResponse)servletResponse;
-        boolean flag =false;
+        //boolean flag =false;
         String SessionID =(String) request.getServletContext().getAttribute("SessionID_Value");
         Cookie[] cookies=request.getCookies();
         if(cookies==null){
@@ -28,14 +28,15 @@ public class loginFilter implements Filter {
         {
             for (Cookie c:cookies){
                 if("SessionID".equals(c.getValue())){
-                    flag = true;
+                    //flag = true;
                     request.getRequestDispatcher("/SucceedServlet").forward(request,response);
-                    break;
+                    filterChain.doFilter(servletRequest,servletResponse);
+                    return;
                 }
             }
-            if(flag=false){
+            //if(flag=false){
                 request.getRequestDispatcher("/LoginServlet").forward(request,response);
-            }
+            //}
         }
         filterChain.doFilter(servletRequest,servletResponse);
     }
